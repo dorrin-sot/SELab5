@@ -49,3 +49,17 @@ private static void findSumsOfAllNumbers(int n) {
 ```
 ![alt text](image-5.png)
 ![alt text](image-6.png)
+
+حال با به‌کارگیری Dynamic Programming سعی میکنیم تا مصرف CPU این برنامه را کاهش دهیم.
+```
+private static void findSumsOfAllNumbersImproved(int n) {
+    int[] arr = new int[n];
+    for (int i = 1; i <= n; i++) {
+        arr[i - 1] = (i == 1) ? 1 : (arr[i - 2] + i);
+    }
+}
+```
+با این کار برنامه را از Order فاکتوریلی به خطی رساندیم و نتایج در YourKit به صورت زیر خواهند شد.
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
